@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Home</title>
+   
+    <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+    padding-bottom: 2px;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* Slider */
+
+.slider{
+    width:100%;
+    max-width:1200px;
+    margin:30px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.slides{
+    display:none;
+}
+
+.slides img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.fade{
+    animation:fade 1s;
+}
+
+.prev,
+.next{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding:16px;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+    background:rgba(0,0,0,.5);
+    border-radius:50%;
+    user-select:none;
+    transition:.3s;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+.prev:hover,
+.next:hover{
+    background:rgba(0,0,0,.8);
+}
+
+@keyframes fade{
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.welcome,
+.featured,
+.intro{
+    text-align:center;
+}
+
+.welcome h2,
+.featured h2,
+.intro h2{
+    color:#3b3b3b;
+    margin-bottom:15px;
+    font-size:34px;
+}
+
+.welcome p,
+.intro p{
+    max-width:900px;
+    margin:auto;
+    color:#555;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .slider{
+        width:95%;
+    }
+
+    .slides img{
+        height:400px;
+    }
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    .slider{
+        width:100%;
+        border-radius:0;
+    }
+
+    .slides img{
+        height:300px;
+        object-fit:cover;
+    }
+
+    .prev,
+    .next{
+        font-size:22px;
+        padding:12px;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .slides img{
+        height:220px;
+    }
+
+    .prev,
+    .next{
+        font-size:18px;
+        padding:10px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>K-Drama Recommendations</h1>
+
+    <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+
+
+<section class="slider">
+
+    <div class="slides fade">
+        <img src="banner1.png" alt="Banner 1">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner2.png" alt="Banner 2">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner3.png" alt="Banner 3">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner4.png" alt="Banner 4">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner5.png" alt="Banner 5">
+    </div> 
+
+    <div class="slides fade">
+        <img src="banner6.png" alt="Banner 6">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner7.webp" alt="Banner 7">
+    </div>
+
+     <div class="slides fade">
+        <img src="banner8.png" alt="Banner 8">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner9.jpg" alt="Banner 9">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner10.jpg" alt="Banner 10">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner11.png" alt="Banner 11">
+    </div>
+
+    <div class="slides fade">
+        <img src="banner12.png" alt="Banner 12">
+    </div> 
+
+    <div class="slides fade">
+        <img src="banner13.png" alt="Banner 13">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</section>
+
+
+<section class="welcome">
+
+    <h2>Welcome to K-Drama Recommendations!</h2>
+
+    <p>
+        Step into the exciting world of Korean dramas! Browse top-rated series from every genre, including romance, action,
+        comedy, thriller, horror, sci-fi, and historical dramas. Whether you're a longtime fan or just getting started, 
+        there's a perfect K-drama waiting for you.
+    </p>
+
+</section>
+
+
+<section class="featured">
+
+    <h2>Featured K-Dramas</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d4/Fight_For_My_Way_Poster.jpg" alt="Fight for My Way">
+            <h3>Fight for My Way</h3>
+            <p>Two lifelong friends chase their dreams while discovering love and overcoming life's challenges.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://images.justwatch.com/poster/311275089/s718/a-shop-for-killers.jpg" alt="A Shop for Killers">
+             <h3>A Shop for Killers</h3>
+             <p>A young woman inherits her uncle's mysterious shopping mall and uncovers a deadly secret filled with assassins.</p>
+       </div>
+
+        <div class="card">
+             <img src="https://m.media-amazon.com/images/M/MV5BMmY0NzkzMTEtMzE0NC00ZDgwLTg5ZDQtZjY1M2ZkNjM4ZmNiXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" alt="The Manipulated">
+             <h3>The Manipulated</h3>
+             <p>A man seeks justice after being falsely accused, uncovering a dangerous conspiracy behind his downfall.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/All_of_Us_Are_Dead.jpeg/250px-All_of_Us_Are_Dead.jpeg" alt="All of Us Are Dead">
+             <h3>All of Us Are Dead</h3>
+             <p>Students trapped in a high school struggle to survive after a deadly zombie virus outbreak.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://asianwiki.com/images/e/ec/Moving-MP1.jpeg" alt="Moving">
+             <h3>Moving</h3>
+             <p>Teenagers with inherited superpowers and their parents fight to protect their secrets from dangerous forces.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://upload.wikimedia.org/wikipedia/en/b/bb/Big_Mouth_%28South_Korean_TV_series%29.jpg" alt="Big Mouth">
+             <h3>Big Mouth</h3>
+             <p>An unsuccessful lawyer is mistaken for a notorious criminal and must uncover the truth to survive.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://m.media-amazon.com/images/M/MV5BNjI1MTg2ZjgtMWQwOC00ZmQ2LTk2YzEtNzU5YWNmNGNkZmMzXkEyXkFqcGc@._V1_.jpg" alt="The Empress Ki">
+             <h3>The Empress Ki</h3>
+             <p>A Goryeo-born woman rises from a servant to become the powerful Empress of the Yuan Dynasty through courage, ambition, and political intrigue.</p>
+        </div>
+
+        <div class="card">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDVeyLUAwzUVdT4F-rLYV7CtfFe77CuBV2gQGy2F52WA&s=10" alt="Weak Hero">
+             <h3>Weak Hero</h3>
+             <p>A quiet but brilliant student uses his intelligence and strategy to stand up against school bullies and protect his friends.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="intro">
+
+    <h2>Why Watch Korean Dramas?</h2>
+
+    <p>
+        Korean dramas have become popular around the world because of
+        their engaging stories, memorable characters, beautiful
+        cinematography, and emotional storytelling. Whether you're
+        looking for romance, thrilling mysteries, exciting action,
+        or heartwarming family stories, there's always a K-drama
+        that fits your taste.
+    </p>
+
+</section>
+
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

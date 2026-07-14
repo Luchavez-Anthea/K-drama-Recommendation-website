@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Drama</title>
+
+    <style>
+   *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2) ;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card p{
+    margin-top:10px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card h3{
+    margin-bottom:10px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+
+</style>
+    
+</head>
+<body>
+    
+<header>
+
+     <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+<main>
+
+    <section class="genre-header">
+        <h2>Drama K-Dramas</h2>
+        <p>
+            Experience heartfelt stories that explore love, family, friendship, and life's greatest challenges. From emotional romances to inspiring journeys of hope and healing, 
+            these drama K-dramas will make you laugh, cry, and stay invested until the very last episode.
+        </p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5mig10oTx1GXal_0P6WGuzdDLG3jrCrKHQPdBz4xWxg&s=10" alt="Queen of Tears">
+            <h3>Queen of Tears</h3>
+            <p><strong>Year Released:</strong> 2024</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.8/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+            <p>
+                A married couple facing a crisis rediscover their love while overcoming family conflicts and personal hardships.
+            </p>
+            <p><strong>Why I Recommend It:</strong> I laughed, cried, and became attached to every character. If you love emotional romance with unforgettable performances, this drama is a must-watch.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-V1PNLYqoEzrGxBBWonIz0NBk_G4pT-2ubJ2P8qtgw&s=10" alt="When Life Gives You Tangerine">
+            <h3>When Life Gives You Tangerine</h3>
+            <p><strong>Year Released:</strong> 2025</p>
+            <p><strong>Audience Rating:</strong> ⭐ 9.4/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+            <p>
+                A heartfelt story following two people as they grow up together on Jeju Island, experiencing love, dreams, and life's challenges across the years.
+            </p>
+            <p><strong>Why I Recommend It:</strong> This drama is beautiful in every way. The story feels so real that you'll laugh, cry, and appreciate life's simple moments long after it ends.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3x0GFHuKoHsGZox8PBFy1_3lFSYV90x6pcwayJP5jIA&s" alt="It's Okay to Not Be Okay">
+            <h3>It's Okay to Not Be Okay</h3>
+            <p><strong>Year Released:</strong> 2020</p>
+            <p><strong>Audience Rating:</strong> ⭐ 9.0/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+            <p>
+                A psychiatric hospital caregiver and a children's book author help each other heal from their emotional scars.
+            </p>
+            <p><strong>Why I Recommend It:</strong> More than just a romance, it's a story about healing and self-love. The characters and life lessons stay with you long after you finish watching.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS691F5KJa3s4B4rbSlz9b8it10EQ09OLDfsIe0Rz8b8w&s=10" alt="Doctor Slump">
+            <h3>Doctor Slump</h3>
+            <p><strong>Year Released:</strong> 2024</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.5/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.0/10</p>
+            <p>
+                Two former rivals reunite during the lowest points of their lives and slowly help each other recover.
+            </p>
+            <p><strong>Why I Recommend It:</strong> If you're feeling stressed or burnt out, this drama is comforting and relatable. It perfectly balances romance, comedy, and emotional healing.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7h0D_kyEBCr8b0VIqf0uLoSgRbr9yxn04JimC2UKMfg&s=10" alt="Dr. Romantic">  
+            <h3>Dr. Romantic</h3>
+            <p><strong>Year Released:</strong> 2016</p>
+            <p><strong>Audience Rating:</strong> ⭐ 9.0/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+            <p>
+                A legendary surgeon mentors young doctors, teaching them not only medical skills but also the true meaning of compassion.
+            </p>
+            <p><strong>Why I Recommend It:</strong> Every episode is inspiring. Even if you're not interested in medical dramas, the characters and meaningful life lessons will keep you watching.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcowiJZUYLqJHDsn7MEk9Dn_7YCBO2cjENGiU8B9dEg&s" alt="When the Phone Rings">
+            <h3>When the Phone Rings</h3>
+            <p><strong>Year Released:</strong> 2024</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.8/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+            <p>
+                A politician and his distant wife are forced to confront hidden truths after a mysterious phone call changes everything.
+            </p>
+            <p><strong>Why I Recommend It:</strong> Every episode ends with a twist that makes it impossible to stop watching. The suspense, romance, and emotional moments are perfectly balanced.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfkjrr269pRBTaMC4qGRUr_fC3wQF79WSZZFY9zzVJA&s=10" alt="The Manipulated">
+            <h3>The Manipulated</h3>
+            <p><strong>Year Released:</strong> 2025</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.6/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.6/10</p>
+            <p>
+                A man fights to clear his name after being framed, uncovering a dangerous conspiracy and seeking justice.
+            </p>
+            <p><strong>Why I Recommend It:</strong> If you enjoy revenge stories filled with suspense and unexpected twists, this drama will keep you guessing until the very end.</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

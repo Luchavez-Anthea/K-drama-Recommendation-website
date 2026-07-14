@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | New Releases</title>
+   <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+    padding-bottom: 2px;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+</style>
+
+</head>
+<body>
+    <header>
+
+         <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="genre-header">
+    <h2>Latest K-Drama Releases</h2>
+    <p>
+        Explore the newest Korean dramas released this year. Stay updated with the latest romance, action, thriller, comedy, and fantasy series that every K-drama fan should look forward to.
+    </p>
+    </section>
+
+<section class="cards">
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSer4nNIZ9WrL6LdWPYR_75Mzo77fxLOTx6maQ6k2lhvg&s=10" alt="Agent Kim Reactivated">
+        <h3>Agent Kim Reactivated</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Action, Spy, Thriller</p>
+        <br>
+        <p>
+            A retired intelligence agent is forced back into the field when a dangerous conspiracy threatens national security.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS04XJooCLlp600HS4KIQLAu_THEwvX87Q64XDm9Dhh3g&s=10" alt="Notes from the Last Row">
+        <h3>Notes from the Last Row</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Youth, Romance, Drama</p>
+        <br>
+        <p>
+            A quiet student discovers friendship, love, and the courage to chase dreams after meeting classmates who change their life forever.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFXv9aTMyla5zfKp1NMkZzBqfaOPsN5fQo2_RilS8LQ&s=10" alt="Teach You a Lesson">
+        <h3>Teach You a Lesson</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Comedy, School, Drama</p>
+        <br>
+        <p>
+            A passionate teacher with unconventional methods transforms the lives of students while learning valuable lessons of their own.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-AqT8E5lrPHrN5Sk7b-fiIc6f61cbgPXHoaDGu9mvrw&s=10" alt="My Royal Nemesis">
+        <h3>My Royal Nemesis</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Historical, Romance, Comedy</p>
+        <br>
+        <p>
+            A royal prince and an outspoken noblewoman become unlikely rivals whose constant clashes slowly turn into romance.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6cW6QqvMoRJj66tmjzs9-LUN2mWC3-YNpxgYRwxWiOQ&s=10" alt="Reborn Rookie">
+        <h3>Reborn Rookie</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Fantasy, Sports, Drama</p>
+        <br>
+        <p>
+            After getting a second chance at life, a failed athlete returns to pursue the dream they once abandoned.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC2oUTbGXRlKtiJxJiVlA_eh448M3Ymm62wN1m-AiLpA&s=10" alt="The Wonder Fools">
+        <h3>The Wonder Fools</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Comedy, Mystery, Fantasy</p>
+        <br>
+        <p>
+            A group of ordinary people with extraordinary abilities become unexpected heroes while solving strange mysteries.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU2RNUlKQbM2XdOEDq1mYnvZ03NjTEWEd0aVkCypojQ&s" alt="The Scarecrow">
+        <h3>The Scarecrow</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Horror, Mystery, Thriller</p>
+        <br>
+        <p>
+            A series of unexplained disappearances in a quiet village lead to terrifying secrets hidden within an abandoned cornfield.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqYpSY-APdm3NApo1T0RLRHjW6lk0a1DHiJzyAikVmg&s=10" alt="Perfect Crown">
+        <h3>Perfect Crown</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Historical, Political, Drama</p>
+        <br>
+        <p>
+            A determined royal heir must navigate palace politics, betrayal, and ambition to claim the throne.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhccHMdL_hyBY_vnZyPFUTkJMbmqDioxC8Xkdia9Q4DQ&s=10" alt="Phantom Lawyer">
+        <h3>Phantom Lawyer</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Legal, Crime, Thriller</p>
+        <br>
+        <p>
+            A mysterious lawyer with an unusual past takes on impossible cases while uncovering corruption within the justice system.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFC3tlC7hDY77uJoBUP-jc72znMf1jvKdALY83Xu_4g&s=10" alt="Doctor on the Edge">
+        <h3>Doctor on the Edge</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Medical, Drama</p>
+        <br>
+        <p>
+            An emergency physician risks everything to save lives while battling personal struggles and hospital politics.
+        </p>
+    </div>
+
+  
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH60mYjLxJDPG-_saRSzVDkHP_4QPebGwtfk9q1CIh0w&s=10" alt="See You at Work Tomorrow">
+        <h3>See You at Work Tomorrow</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Romance, Workplace, Comedy</p>
+        <br>
+        <p>
+            Two coworkers slowly fall in love while navigating office life, career ambitions, and unexpected challenges.
+        </p>
+    </div>
+
+    
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNIyDu7DLG5xiiHGvsd4dTLfQOEGozZTOoAUsgiyX-wQ&s=10" alt="Can This Love Be Translated?">
+        <h3>Can This Love Be Translated?</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Romance, Comedy</p>
+        <br>
+        <p>
+            A multilingual interpreter and a world-famous celebrity discover that love can overcome every language barrier.
+        </p>
+    </div>
+
+    
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-kEkEIBPSdhGrWy1-m4woApxq5-ToqVB6FATCwj8cKg&s=10" alt="If Wishes Could Kill">
+        <h3>If Wishes Could Kill</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Fantasy, Thriller</p>
+        <br>
+        <p>
+            A mysterious power grants people's wishes—but every wish comes with a deadly consequence.
+        </p>
+    </div>
+
+    
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqHq1bKKyrSMLYzbA68NHYAu1zvMZLBPSrtKOznjQx5g&s" alt="The Husband">
+        <h3>The Husband</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Romance, Mystery, Drama</p>
+        <br>
+        <p>
+            A woman begins to question everything she knows about her seemingly perfect husband after uncovering hidden secrets.
+        </p>
+    </div>
+
+    
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs0jpzR5UdNUbU6_ZmGbQC2NNyRPkex0k5Hggr6VmQQw&s=10" alt="We Are All Trying Here">
+        <h3>We Are All Trying Here</h3>
+        <p><strong>Release Year:</strong> 2026</p>
+        <p><strong>Genre:</strong> Slice of Life, Drama</p>
+        <br>
+        <p>
+            A heartwarming story about ordinary people supporting one another while facing life's everyday struggles and finding hope together.
+        </p>
+    </div>
+
+</section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

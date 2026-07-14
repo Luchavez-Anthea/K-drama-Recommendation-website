@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Home</title>
+    
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+
+<header>
+
+    <h1>K-Drama Recommendations</h1>
+
+    <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+<section class="genre-header">
+
+    <h2>About K-Drama Recommendations</h2>
+
+    <p>
+        Welcome to <strong>K-Drama Recommendations</strong>, your guide to discovering
+        some of the best Korean dramas across different genres. Whether you're a
+        longtime fan or just starting your K-drama journey, our goal is to help you
+        find series that match your interests and make choosing your next drama easier.
+    </p>
+
+</section>
+
+
+<section class="cards">
+
+    <div class="card">
+        <h3> Purpose</h3>
+
+        <p>
+            This website was created to help viewers explore Korean dramas through
+            organized genre categories, top-rated series, and the latest releases.
+            Instead of spending hours searching, visitors can quickly find dramas
+            that suit their preferences.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3> What You'll Find</h3>
+
+        <p>
+            Browse recommendations from Action, Drama, Comedy, Horror, Sci-Fi,
+            Thriller, and Historical genres. Each recommendation includes a short
+            synopsis, audience rating, and personal recommendation to help you
+            decide what to watch next.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3> Top Rated Dramas</h3>
+
+        <p>
+            Explore a collection of highly rated Korean dramas loved by audiences
+            around the world. These titles are known for their memorable stories,
+            outstanding acting, and lasting popularity.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3> New Releases</h3>
+
+        <p>
+            Stay updated with the newest Korean dramas. My New Releases page
+            features upcoming and recently released series, helping you discover
+            exciting titles before everyone else.
+        </p>
+    </div>
+
+</section>
+
+
+<section class="genre-header">
+
+    <h2>My Mission</h2>
+
+    <p>
+        My mission is to create a simple, organized, and enjoyable website where
+        K-drama fans can easily discover great series to watch. I hope every
+        visitor finds stories that entertain, inspire, and create unforgettable
+        viewing experiences.
+    </p>
+
+</section>
+
+
+<section class="cards">
+
+    <div class="card">
+
+    <h3> About the Developer</h3>
+
+    <p>
+        This website was created as a requirement for our Web Development course,
+        where we were instructed to design a website with a minimum of five pages.
+        Since I am a huge K-drama fan, I decided to create a K-Drama Recommendation
+        website that combines my passion for Korean dramas with the web development
+        skills I learned throughout the course.
+    </p>
+
+    <p>
+        My goal is to help fellow K-drama enthusiasts discover amazing series by
+        organizing recommendations into different genres, showcasing top-rated
+        dramas, and featuring the latest releases. I hope this website makes it
+        easier and more enjoyable for viewers to find their next favorite K-drama.
+    </p>
+
+</div>
+
+</section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+
+</body>
+</html>

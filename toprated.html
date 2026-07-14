@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Rated K-Dramas</title>
+    <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+    padding-bottom: 2px;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+     <h1>K-Drama Recommendations</h1>
+
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+
+<section class="genre-header">
+
+    <h2>Top 10 Rated K-Dramas</h2>
+
+    <p>
+        Discover the highest-rated Korean dramas loved by millions of viewers around the world.
+        Whether you're just starting your K-drama journey or searching for your next binge-watch,
+        these fan favorites are considered some of the very best.
+    </p>
+
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0xmWevKbSFeVdjqVbhd4yOOyM-sl9b5_UmmZD8VMTeg&s" alt="Crash Landing on You">
+        <h3>🥇 #1 Crash Landing on You</h3>
+        <p><strong>Year Released:</strong> 2019</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSilKZZ_MHV6FApBr0i1IE7JvbyTOks910aHd8Lw7UiKaU6ji9ZybwwpzwQ&s=10" alt="Hospital Playlist">
+        <h3>🥈 #2 Hospital Playlist</h3>
+        <p><strong>Year Released:</strong> 2020</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9kTpLZvOe5cAJ6kvkhBqmUJweOsVaqeozM2D_i-CZMg&s" alt="Kingdom">
+        <h3>🥉 #3 Kingdom</h3>
+        <p><strong>Year Released:</strong> 2019</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoahIYZWKUT_TtdzQrbablcOWhMNJckZZndtpAuuBGWw&s" alt="Moving">
+        <h3>#4 Moving</h3>
+        <p><strong>Year Released:</strong> 2023</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GsrN-rRyeHZqJU5r9m12PlBpXtBudhP4duA8kvrWHg&s=10" alt="The Glory">
+        <h3>#5 The Glory</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevTLUU_K-PqTlIDMTp838t2iCdYkEJ2oLDW5fCTc1Dg&s" alt="Weak Hero Class 1">
+        <h3>#6 Weak Hero Class 1</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWCmWxXi2Zon9mFWgd-vSRFPc0fLSwJFJW3zgR31JA&s=10" alt="Lovely Runner">
+        <h3>#7 Lovely Runner</h3>
+        <p><strong>Year Released:</strong> 2024</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKCg-Iqd60V3HmdPcqbP02md_2P1PefcK3Ya6jGnVgGg&s" alt="When Life Gives You Tangerines">
+        <h3>#8 When Life Gives You Tangerines</h3>
+        <p><strong>Year Released:</strong> 2025</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG3szUijI38smgRGHKI7AQbMiaveo-UZMKZ81NL8zMeQ&s=10" alt="Queen of Tears">
+        <h3>#9 Queen of Tears</h3>
+        <p><strong>Year Released:</strong> 2024</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_65lo341SE-l0L97xsgxjhXygH9YM9ci3Etx8jYKfmQ&s=10" alt="Alchemy of Souls">
+        <h3>#10 Alchemy of Souls</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+    </div>
+
+</section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+
+</body>
+</html>

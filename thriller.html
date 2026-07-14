@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Drama</title>
+    <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2) ;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card p{
+    margin-top:10px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card h3{
+    margin-bottom:10px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+
+</style>
+    
+</head>
+<body>
+    <header>
+
+         <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="genre-header">
+    <h2>Thriller K-Dramas</h2>
+    <p>
+        Dive into gripping Korean dramas filled with suspense, shocking twists,
+        psychological mind games, and unforgettable mysteries that will keep you guessing until the very end.
+    </p>
+</section>
+
+<section class="cards">
+
+    <!-- MOUSE -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLeXF2ctbVt3mkRHyJlmEDrJ7jrJXwFrer27lqic4eXA&s=10" alt="Mouse">
+        <h3>Mouse</h3>
+        <p><strong>Year Released:</strong> 2021</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.6/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            A rookie police officer becomes involved in the hunt for a ruthless serial killer,
+            uncovering dark secrets that change everything he thought he knew.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I honestly don't think I've ever questioned every character as much as I did in this drama. Every episode completely changed my theories, and the plot twists left me speechless. It's one of the smartest thrillers I've ever watched.</p>
+    </div>
+
+    <!-- THE GLORY -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3GsrN-rRyeHZqJU5r9m12PlBpXtBudhP4duA8kvrWHg&s=10" alt="The Glory">
+        <h3>The Glory</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.9/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            A woman who suffered brutal school bullying dedicates her life to
+            carrying out a carefully planned revenge against those who destroyed her childhood.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> Watching every part of her revenge unfold was incredibly satisfying. I couldn't stop watching because I wanted to see how every piece of her plan would come together.</p>
+    </div>
+
+    <!-- BIG MOUTH -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEiyG1J9Ggne0SAy73MeuISqXZ15nyaeMxs6j0otbuFQ&s" alt="Big Mouth">
+        <h3>Big Mouth</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.4/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            A struggling lawyer is mistaken for a notorious criminal mastermind and
+            must fight to survive while uncovering a massive conspiracy.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I loved how every episode kept raising the stakes. Just when I thought I had figured everything out, another twist completely surprised me.</p>
+    </div>
+
+    <!-- BLIND -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtvMBgQDG9vfP2e9B3jPMZ0SrASTUtD1fySGu8eMBHGg&s=10" alt="Blind">
+        <h3>Blind</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.0/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.6/10</p>
+
+        <p>
+            Detectives, judges, and ordinary citizens become trapped in a deadly
+            murder investigation connected to a dark secret from the past.
+        </p>
+
+        <p><strong>Why We Recommend It:</strong> This drama constantly kept me guessing. I changed my suspect list almost every episode because everyone seemed suspicious.</p>
+    </div>
+
+    <!-- LIES HIDDEN IN MY GARDEN -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8YwYOSfMfqxFSLBjpPkHjBkM5ConYLfL8Sgd3WIZ1vw&s=10" alt="Lies Hidden in My Garden">
+        <h3>Lies Hidden in My Garden</h3>
+        <p><strong>Year Released:</strong> 2023</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.1/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.3/10</p>
+
+        <p>
+            A strange smell coming from a woman's backyard leads her into a disturbing
+            mystery involving secrets, lies, and murder.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> The suspense builds slowly, but that's what made it so enjoyable for me. I couldn't stop wondering what was really hidden beneath the surface.</p>
+    </div>
+
+    <!-- NINE PUZZLES -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6jOZrpmNXovLWfuVdTJcwWui6RA0kQsBdysbMC3cOlg&s=10" alt="Nine Puzzles">
+        <h3>Nine Puzzles</h3>
+        <p><strong>Year Released:</strong> 2025</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.4/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.7/10</p>
+
+        <p>
+            A criminal profiler and a detective investigate a series of murders connected
+            by mysterious puzzle pieces left at every crime scene.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I was completely hooked by the mystery. Every clue felt important, and I loved trying to solve the case before the characters did.</p>
+    </div>
+
+    <!-- THE FROG -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89iXbTvySRWC5_jQXxsSxfVXyckYdKayvYWnAkEzV_Q&s=10" alt="The Frog">
+        <h3>The Frog</h3>
+        <p><strong>Year Released:</strong> 2024</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.2/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.5/10</p>
+
+        <p>
+            The peaceful lives of two men become connected by a mysterious woman
+            whose arrival brings secrets, fear, and unexpected consequences.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I really enjoyed how the tension kept building with every episode. It made me feel uneasy in the best way because I never knew what would happen next.</p>
+    </div>
+
+    <!-- LITTLE WOMEN -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnbrd1sSA7IgS0p3LOKaEBQX5NayGAxlSqHAP09EQSrg&s=10" alt="Little Women">
+        <h3>Little Women</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.7/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            Three sisters become caught in a dangerous conspiracy involving
+            wealth, power, and one of the richest families in Korea.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I loved how every sister had an important role in the story. The mystery, family bond, and constant twists made it impossible for me to stop watching.</p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

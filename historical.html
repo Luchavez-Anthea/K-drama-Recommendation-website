@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Drama</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2) ;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card p{
+    margin-top:10px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card h3{
+    margin-bottom:10px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+
+</style>
+    
+</head>
+<body>
+    <header>
+        
+         <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="genre-header">
+    <h2>Historical K-Dramas</h2>
+    <p>
+        Travel back in time with captivating Korean historical dramas filled with
+        royal politics, unforgettable romance, epic battles, and inspiring heroes.
+    </p>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtGs4dQdmc0BH7UBvnSOkdzsDvKye3U-z70fTFIm5rNQ&s=10" alt="The Empress Ki">
+        <h3>The Empress Ki</h3>
+        <p><strong>Year Released:</strong> 2013</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.5/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            A courageous Goryeo woman rises from humble beginnings to become one of the
+            most powerful empresses in history while facing love, betrayal, and political conflict.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I was amazed by how strong and determined the main character was. Watching her overcome every challenge made me admire her even more, and I found myself rooting for her until the very end.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38vo_cIS-F6ZIlMst_kQvhu6Sq2anxWQP5pRvREwXnw&s=10" alt="Moon Lovers: Scarlet Heart Ryeo">
+        <h3>Moon Lovers: Scarlet Heart Ryeo</h3>
+        <p><strong>Year Released:</strong> 2016</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.7/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            A modern-day woman unexpectedly travels back to the Goryeo Dynasty, where
+            she becomes caught in the struggles and romances of the royal princes.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> This drama completely broke my heart in the best way. I laughed, cried, and became attached to every character. Even after finishing it, I couldn't stop thinking about the ending.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlL7vgaU62C2WKxh0tuqMLII04--7tonljkell3izH4w&s=10" alt="Hwarang">
+        <h3>Hwarang</h3>
+        <p><strong>Year Released:</strong> 2016</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.0/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.5/10</p>
+
+        <p>
+            A group of elite young warriors forms strong friendships while protecting
+            the kingdom and discovering their true destinies.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> What I enjoyed most was the friendship between the characters. Their loyalty, funny moments, and emotional journey made this drama feel special from beginning to end.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ILQJeBWC8XGXn1m-m_hv5CJp4iMILVZTABz7nebzFw&s=10" alt="Under the Queen's Umbrella">
+        <h3>Under the Queen's Umbrella</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.7/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            A determined queen does everything she can to protect her sons while
+            navigating palace politics and fierce competition for the throne.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I loved seeing how far a mother would go for her children. It has emotional family moments, clever political battles, and characters you'll truly care about.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTGFUt4BlYpdbefYnvdKKX3Opj69wjXfoVBql0477OHw&s=10" alt="Moon Embracing the Sun">
+        <h3>Moon Embracing the Sun</h3>
+        <p><strong>Year Released:</strong> 2012</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.1/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.6/10</p>
+
+        <p>
+            A king reunites with his first love years after believing she had died,
+            uncovering secrets that changed both of their lives forever.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> This is one of those dramas that made me feel every emotion. The romance is beautiful, and I couldn't help hoping the two leads would finally find happiness.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRdrPFK40ITYWUdSy1dj9SnGWhZgWkj3G1p0txrpHjZg&s=10" alt="The Tale of Lady Ok">
+        <h3>The Tale of Lady Ok</h3>
+        <p><strong>Year Released:</strong> 2024</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.5/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.7/10</p>
+
+        <p>
+            A woman hides her true identity while fighting to survive and protect
+            those she loves in the Joseon Dynasty.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I admired how brave and intelligent the main character was. Every challenge she faced made me want to keep watching and see how she would overcome it.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg9GAFSUGUGgK_fhHrVUgX7epJZzsJsMD-ZgtqtIQoOQ&s=10" alt="Arthdal Chronicles">
+        <h3>Arthdal Chronicles</h3>
+        <p><strong>Year Released:</strong> 2019</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.3/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            In the mythical land of Arth, powerful tribes battle for control while
+            heroes rise to shape the future of their world.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I wasn't expecting to get so invested in the world and its characters. The story feels grand, the visuals are stunning, and every episode left me wanting more.</p>
+    </div>
+
+</section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

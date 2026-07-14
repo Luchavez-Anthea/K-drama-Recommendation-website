@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Action</title>
+    <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2) ;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card p{
+    margin-top:10px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card h3{
+    margin-bottom:10px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+    <header>
+
+        <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="genre-header">
+        <h2>Action K-Dramas</h2>
+        <p>
+            Explore exciting Korean dramas filled with thrilling fight scenes,
+            suspense, and unforgettable adventures.
+        </p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/M/MV5BODc4NDA2MTYtMzk1Ni00OTM1LWFhOTItMDA2OWM4NTZkYzVmXkEyXkFqcGc@._V1_.jpg" alt="The K2">
+            <h3>The K2</h3>
+            <p><strong>Year Released:</strong> 2016</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.4/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.0/10</p>
+            <p>
+                A former soldier becomes the bodyguard of a presidential candidate's 
+                hidden daughter while uncovering dangerous political conspiracies.
+            </p>
+            <p><strong>Why I Recommend It:</strong> If you love action with a touch of romance, this drama is worth watching. The fight scenes are some of the best I've seen in a K-drama, and every episode kept me wanting to know what would happen next.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTdjOTAzOTgtNWI1My00YzZkLWI2YWMtYjQ2MTAxOTI4YWQzXkEyXkFqcGc@._V1_.jpg" alt="The Gangster, the Cop, the Devil">
+            <h3>The Gangster, the Cop, the Devil</h3>
+            <p><strong>Year Released:</strong> 2019</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.6/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+            <p>
+                Thrilling action, intense performances, and a gripping cat-and-mouse story.A crime boss and a determined detective 
+                join forces to hunt down a ruthless serial killer after surviving a brutal attack.
+            </p>
+            <p><strong>Why I Recommend It:</strong> This movie had me on the edge of my seat from start to finish. The unexpected partnership between a gangster and a detective makes the story unique, and the action never slows down.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTofMiKAvovMp27NiZUV8HhcjtKdrOVi-ejuH9GrAvTIA&s=10" alt="Mercy for None">
+            <h3>Mercy for None</h3>
+            <p><strong>Year Released:</strong> 2023</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.6/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+            <p>
+                A former gangster returns to the criminal underworld to uncover the truth behind his brother's mysterious death and seek revenge.
+            </p>
+            <p><strong>Why I Recommend It:</strong> I couldn't stop watching because every episode made me want answers. If you're a fan of revenge stories with brutal action and emotional moments, this is definitely one to add to your watchlist.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.justwatch.com/poster/311275089/s718/a-shop-for-killers.jpg" alt="A Shop for Killers">
+            <h3>A Shop for Killers</h3>
+            <p><strong>Year Released:</strong> 2023</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.8/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.9/10</p>
+
+            <p>
+                After her uncle's sudden death, a young woman inherits his mysterious shopping mall and becomes the target of deadly assassins.
+            </p>
+            <p><strong>Why I Recommend It:</strong> This drama surprised me with how intense and exciting it is. The action is fast-paced, the plot has plenty of twists, and you'll constantly wonder who can actually be trusted.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDVeyLUAwzUVdT4F-rLYV7CtfFe77CuBV2gQGy2F52WA&s=10" alt="Weak Hero">
+            <h3>Weak Hero</h3>
+            <p><strong>Year Released:</strong> 2023</p>
+            <p><strong>Audience Rating:</strong> ⭐ 9.1/10</p>
+            <p><strong>My Rating:</strong> ⭐ 9.5/10</p>
+
+            <p>
+                A quiet but intelligent student fights back against school violence using strategy, determination, and unexpected friendships.
+            </p>
+            <p><strong>Why I Recommend It:</strong> Don't let the school setting fool you, this drama is far more intense than most action series. The characters feel real, the friendships are unforgettable, and every fight carries real emotional weight. It's one of those dramas you'll finish in one sitting</p>
+        </div>
+ 
+       <div class="card">
+            <img src="https://i.mydramalist.com/qboZPf.jpg" alt="Vagabond">
+            <h3>Vagabond</h3>
+            <p><strong>Year Released:</strong> 2019</p>
+            <p><strong>Audience Rating:</strong> ⭐ 8.7/10</p>
+            <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+            <p>
+                A stuntman investigates a mysterious plane crash that killed his nephew, uncovering a dangerous web of corruption, betrayal, and political conspiracy.
+            </p>
+
+           <p><strong>Why I Recommend It:</strong> This is one of the most exciting action K-dramas I've ever watched. Every episode is packed with intense fight scenes, shocking plot twists, and emotional moments that kept me completely hooked. If you enjoy action, suspense, and nonstop excitement, <em>Vagabond</em> is a must-watch.</p>
+       </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

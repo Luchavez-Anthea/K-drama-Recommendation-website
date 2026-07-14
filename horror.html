@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Drama</title>
+   <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.2) ;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    padding:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card p{
+    margin-top:10px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.card img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .cards{
+        gap:15px;
+    }
+
+    .card{
+        width:45%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+        max-width:420px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card h3{
+    margin-bottom:10px;
+    }
+
+    .card img{
+        height:320px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .card{
+        width:95%;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+}
+
+</style>
+    
+</head>
+<body>
+    <header>
+
+         <h1>K-Drama Recommendations</h1>
+   <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="genre-header">
+    <h2>Horror K-Dramas</h2>
+    <p>
+        Experience chilling Korean dramas filled with terrifying creatures,
+        supernatural mysteries, and heart-pounding suspense.
+    </p>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <img src="https://static.wikia.nocookie.net/sweet-home-netflix/images/e/e9/Sweet_Home_Season_1_Poster_01.jpg/revision/latest/scale-to-width-down/1200?cb=20201225071737" alt="Sweet Home">
+        <h3>Sweet Home</h3>
+        <p><strong>Year Released:</strong> 2020</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.7/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            After moving into a rundown apartment, a lonely teenager and the residents
+            must fight terrifying monsters while struggling to survive.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I honestly didn't expect to get so attached to the characters. Every episode made me worry about who would survive next, and the mix of horror and emotion kept me hooked until the very end. It's one of those dramas that stays in your mind long after you finish it.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJbx5Czfd0t-hdiAno4vu2203H_tOoHVmUE5jieCNVyf31hC4YV1xhdG4_lctllDQ_I56DMqEWlzOfUIjdgnrWsHVyr_DiY1ybcV2P0E&s=10" alt="Revenant">
+        <h3>Revenant</h3>
+        <p><strong>Year Released:</strong> 2023</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.8/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            A young woman becomes possessed by an evil spirit, forcing her and a folklore
+            professor to uncover the truth behind a series of mysterious deaths.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> This drama gave me chills in the best way. The creepy atmosphere and mystery had me guessing every episode, and I couldn't stop watching because I wanted to know what was really happening.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/All_of_Us_Are_Dead.jpeg/250px-All_of_Us_Are_Dead.jpeg" alt="All of Us Are Dead">
+        <h3>All of Us Are Dead</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.5/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.8/10</p>
+
+        <p>
+            A zombie virus spreads through a high school, leaving trapped students to
+            fight for survival and protect one another.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I thought it would just be another zombie drama, but it turned out to be so much more. I became attached to the friendships, and there were scenes that genuinely made me anxious and emotional. It's exciting from beginning to end.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMUfraVw7Q9LTR5OBf1rDsCyCxoZ2VNe7DrKNCPisJWtDBiNMz-dkuz4&s=10" alt="Kingdom">
+        <h3>Kingdom</h3>
+        <p><strong>Year Released:</strong> 2019</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.9/10</p>
+        <p><strong>My Rating:</strong> ⭐ 10/10</p>
+
+        <p>
+            During the Joseon Dynasty, a crown prince uncovers a terrifying plague that
+            turns people into flesh-eating monsters while political conspiracies unfold.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> This is one of those dramas that completely exceeded my expectations. I loved how it mixed history with zombie horror, and every episode left me wanting to watch just one more. It never felt slow for a second.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbOOXAEDaZbxVyF0mQk_lHVxkSE-H5j19hrd-LYuGwLMMnZ-VmOwQkUoKJxVSgPh0uDYidtf82ZXKCuw0jr0f_nde-6_g91h92jrNI0p4&s" alt="Connect">
+        <h3>Connect</h3>
+        <p><strong>Year Released:</strong> 2022</p>
+        <p><strong>Audience Rating:</strong> ⭐ 7.8/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.2/10</p>
+
+        <p>
+            After having one of his eyes stolen, an immortal man becomes psychically
+            linked to a serial killer and must stop his horrifying crimes.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> What I liked most was how different it felt from other horror dramas. The story kept surprising me, and the connection between the main character and the killer made every episode even more intense.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe-iuCp6DtSSPN0A5IBJXAYwAx5wQK702Ibo5GgzcHqiLFmtQ4Im3KWzr8h6jg5CqQzIrJJIjJ2QkyYL3jzGZmUJ8HPJjsm4Dny65M9w&s=10" alt="Bulgasal: Immortal Souls">
+        <h3>Bulgasal: Immortal Souls</h3>
+        <p><strong>Year Released:</strong> 2021</p>
+        <p><strong>Audience Rating:</strong> ⭐ 8.3/10</p>
+        <p><strong>My Rating:</strong> ⭐ 9.5/10</p>
+
+        <p>
+            A man cursed with immortality searches for the woman connected to his tragic
+            past while battling monsters and ancient secrets.
+        </p>
+
+        <p><strong>Why I Recommend It:</strong> I wasn't expecting such an emotional story. It has action and supernatural elements, but what really kept me watching was the heartbreaking journey of the characters. By the end, I was completely invested in their story.</p>
+    </div>
+
+</section>
+
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+</body>
+</html>

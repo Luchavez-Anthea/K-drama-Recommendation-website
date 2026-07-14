@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Drama Recommendations | Home</title>
+    <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f1ea;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#3b3b3b;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    margin-top:15px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:14px 20px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu li a:hover{
+    background:#d4af37;
+    color:#222;
+    border-radius:5px;
+}
+
+.dropdown{
+    position:relative;
+    padding-bottom: 2px;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    list-style: none;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dropdown-content li{
+    width:100%;
+}
+
+.dropdown-content li a{
+    color:#333;
+    padding:12px 18px;
+}
+
+.dropdown-content li a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+section{
+    padding:40px;
+}
+
+.contact-container{
+    max-width:1200px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:40px;
+}
+
+.profile{
+    flex:1;
+    text-align:center;
+}
+
+.profile img{
+    width:380px;
+    max-width:100%;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.25));
+    transition:.3s;
+    margin-bottom: 5px;
+}
+
+.profile img:hover{
+    transform:scale(1.08) rotate(-2deg);
+}
+
+.profile h2{
+    margin-top:20px;
+    color:#3b3b3b;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.title{
+    margin-top:0;
+    font-size:18px;
+    font-weight: 600;
+    color: #3b3b3b;
+    line-height:1.6;
+}
+
+.course{
+    margin-top:18px;
+    font-size:16px;
+    color:#666;
+    line-height:1.6;
+}
+
+
+.contact-info{
+    flex:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.contact-info h2{
+    margin-bottom:25px;
+    color:#3b3b3b;
+}
+
+.contact-item{
+    background:#faf8f2;
+    padding:18px;
+    margin-bottom:15px;
+    border-left:6px solid #d4af37;
+    border-radius:10px;
+}
+
+.contact-item strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.contact-item a{
+    transition:.3s;
+}
+
+.contact-item a:hover{
+    color:#d4af37;
+}
+
+footer{
+    background:#3b3b3b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.genre-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.genre-header h2{
+    font-size:36px;
+    color:#3b3b3b;
+    margin-bottom:15px;
+}
+
+.genre-header p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#555;
+}
+
+/*RESPONSIVE DESIGN*/
+
+
+@media screen and (max-width: 1024px){
+
+    .contact-container{
+        max-width:95%;
+        gap:35px;
+        padding:30px;
+    }
+
+    .profile img{
+        width:320px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .menu{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-content{
+        position:static;
+        width:100%;
+        box-shadow:none;
+        border-radius:0;
+    }
+
+    section{
+        padding:25px 15px;
+    }
+
+    .genre-header h2{
+        font-size:28px;
+    }
+
+    .genre-header p{
+        font-size:16px;
+    }
+
+    .contact-container{
+    flex-direction:column;
+    text-align:center;
+    gap: 25px;
+    padding:25px;
+    }
+
+   .profile img{
+    width:250px;
+   }
+
+   .contact-info{
+    width:100%;
+   }
+
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+@media screen and (max-width: 480px){
+    header h1{
+        font-size:22px;
+    }
+
+    .menu li a{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .genre-header h2{
+        font-size:24px;
+    }
+
+    .genre-header p{
+        font-size:15px;
+    }
+
+    .contact-container{
+        padding:20px;
+    }
+
+    .profile img{
+        width:200px;
+    }
+
+    .profile h2{
+        font-size:26px;
+    }
+
+    .title{
+        font-size:16px;
+    }
+
+    .course{
+        font-size:15px;
+    }
+
+    .contact-item{
+        padding:15px;
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <h1>K-Drama Recommendations</h1>
+
+    <nav>
+        <ul class="menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Genres ▼</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="action.html">Action</a></li>
+                    <li><a href="drama.html">Drama</a></li>
+                    <li><a href="comedy.html">Comedy</a></li>
+                    <li><a href="horror.html">Horror</a></li>
+                    <li><a href="scifi.html">Sci-Fi</a></li>
+                    <li><a href="thriller.html">Thriller</a></li>
+                    <li><a href="historical.html">Historical</a></li>
+                </ul>
+            </li>
+
+            <li><a href="toprated.html">Top Rated</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="genre-header">
+
+    <h2>Contact Me</h2>
+
+    <p>
+        I'd love to hear from you! Whether you have K-drama recommendations,
+        suggestions for improving the website, or questions, feel free to contact me using the information below.
+    </p>
+
+</section>
+
+<section class="contact-container">
+
+    <div class="profile">
+        <img src="imongmhamhwa.png" alt="Anthea">
+        <h2>Anthea M. Luchavez</h2>
+       <p class="title">
+        K-Drama Enthusiast
+    </p>
+
+    <p class="course">
+        BIT - CompTech 2A <br>
+        Lapu-Lapu City College
+    </p>
+    </div>
+
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <div class="contact-item">
+            <strong> Facebook</strong>
+            <a href="https://www.facebook.com/anthea.luchavez" target="_blank">
+                Anthea M. luchavez
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <strong> Instagram</strong>
+            <a href="https://www.instagram.com/tea.yuuhhhh" target="_blank">
+                @tea.yuuhhhh
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:anthealuchavez@gmail.com">
+                anthealuchavez@gmail.com
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <strong> Phone</strong>
+            +63 927 734 1903
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> K-Drama Recommendations. All Rights Reserved.</p>
+</footer>
+
+<script src="javascrpt.js"></script>
+
+</body>
+</html>
